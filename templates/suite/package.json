@@ -1,0 +1,78 @@
+{
+  "name": "@ali/<%- name %>",
+  "version": "<%- version %>",
+  "description": "<%- description %>",
+  "files": [
+    "demo/",
+    "es/",
+    "lib/",
+    "build/"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "stylePath": "style.js",
+  "scripts": {
+    "start": "tnpm ii && swap start",
+    "build": "build-scripts build",
+    "prepublishOnly": "npm run build",
+    "i18n": "update-i18n ./translationKeys.js ./i18nResource -n dingtalk",
+    "lint": "eslint --cache --ext .js,.jsx ./",
+    "test": "dtest test -t h5 -c --coverage",
+    "test-report": "dtest unit-test -R -T h5",
+    "test-prepush": "npm run test && npm run test-report"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run test-prepush"
+    }
+  },
+  "keywords": [
+    "swap",
+    "react",
+    "suite"
+  ],
+  "tnpm": {
+    "mode": "tnpm"
+  },
+  "dependencies": {
+    "@ali/sw-utils": "^1.0.7",
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {
+    "@ali/dtest-toolbox": "latest",
+    "@ali/swap-editor": "^2.3.17",
+    "@ali/swap-render-engine": "^0.11.0-beta.5",
+    "@alib/build-scripts": "^0.1.3",
+    "@alifd/next": "1.x",
+    "@ice/spec": "^1.0.0",
+    "@types/react": "^16.9.13",
+    "@types/react-dom": "^16.9.4",
+    "build-plugin-component": "^1.0.0",
+    "build-plugin-fusion": "^0.1.0",
+    "build-plugin-moment-locales": "^0.1.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "eslint": "^6.0.1",
+    "husky": "^4.2.5",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0",
+    "antd": ">=4.8.0",
+    "antd-mobile": ">=2.3.0",
+    "@ali/dingtalk-jsapi": ">=2.12.0",
+    "@alifd/next": "1.x"
+  },
+  "componentConfig": {
+    "name": "<%- componentName %>",
+    "title": "<%- componentName %>",
+    "category": "<%- category %>"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npm.alibaba-inc.com"
+  },
+  "license": "MIT",
+  "homepage": "https://unpkg.alibaba-inc.com/@ali/<%- name %>@1.0.0/build/index.html"
+}
