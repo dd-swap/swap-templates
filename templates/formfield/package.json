@@ -71,8 +71,8 @@
     "category": "<%- category %>"
   },
   "publishConfig": {
-    "registry": "https://registry.npm.alibaba-inc.com"
+    "registry": ""
   },
   "license": "MIT",
-  "homepage": "https://unpkg.alibaba-inc.com/@ali/<%- name %>@1.0.0/build/index.html"
+  "homepage": ""
 }
