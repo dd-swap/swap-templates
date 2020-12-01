@@ -1,4 +1,3 @@
-import i18next from './i18next';
 
 // 完整配置见 https://notes.dingtalk.com/doc/E0Vzg5OZ0M3eZmJe?orgId=16872003&dd_progress=false&showmenu=false
 export default {
@@ -16,12 +15,10 @@ export default {
       setterName: 'Input',
       props: {
         label: '标题',
-        subLabel: i18next.t('swap_editor_input_most_number', {
-          value1: 20,
-        }),
+        subLabel: '最长支持20位',
         maxLength: 20,
         validateMessage: {
-          required: i18next.t('oa_approval_the_title_can_not_be_blank'),
+          required: '不能为空',
         },
       },
     },

@@ -1,7 +1,5 @@
 import React, { Component, ChangeEvent } from 'react';
 
-import i18next from './i18next';
-
 import './view.pc.less';
 
 export default class <%- componentName%> extends Component {

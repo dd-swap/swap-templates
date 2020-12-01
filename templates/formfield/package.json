@@ -1,5 +1,5 @@
 {
-  "name": "@ali/<%- name %>",
+  "name": "<%- name %>",
   "version": "<%- version %>",
   "description": "<%- description %>",
   "files": [
@@ -12,13 +12,10 @@
   "module": "es/index.js",
   "stylePath": "style.js",
   "scripts": {
-    "start": "tnpm ii && swap start",
+    "start": "npm ii && swap start",
     "build": "build-scripts build",
     "prepublishOnly": "npm run build",
-    "i18n": "update-i18n ./translationKeys.js ./i18nResource -n dingtalk",
     "lint": "eslint --cache --ext .js,.jsx ./",
-    "test": "dtest test -t h5 -c --coverage",
-    "test-report": "dtest unit-test -R -T h5",
     "test-prepush": "npm run test && npm run test-report"
   },
   "husky": {
@@ -31,20 +28,10 @@
     "react",
     "suite"
   ],
-  "tnpm": {
-    "mode": "tnpm"
-  },
   "dependencies": {
-    "@ali/sw-utils": "^1.0.7",
     "lodash": "^4.17.20"
   },
   "devDependencies": {
-    "@ali/dtest-toolbox": "latest",
-    "@ali/swap-editor": "^2.3.17",
-    "@ali/swap-render-engine": "^0.11.0-beta.5",
-    "@alib/build-scripts": "^0.1.3",
-    "@alifd/next": "1.x",
-    "@ice/spec": "^1.0.0",
     "@types/react": "^16.9.13",
     "@types/react-dom": "^16.9.4",
     "build-plugin-component": "^1.0.0",
@@ -61,9 +48,7 @@
     "react": ">=16.9.0",
     "react-dom": ">=16.9.0",
     "antd": ">=4.8.0",
-    "antd-mobile": ">=2.3.0",
-    "@ali/dingtalk-jsapi": ">=2.12.0",
-    "@alifd/next": "1.x"
+    "antd-mobile": ">=2.3.0"
   },
   "componentConfig": {
     "name": "<%- componentName %>",
@@ -71,8 +56,8 @@
     "category": "<%- category %>"
   },
   "publishConfig": {
-    "registry": ""
+    "registry": "https://registry.npm.alibaba-inc.com"
   },
   "license": "MIT",
-  "homepage": ""
+  "homepage": "https://unpkg.alibaba-inc.com/@ali/<%- name %>@1.0.0/build/index.html"
 }

@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-import i18next from './i18next';
 
 import './view.mobile.less';
 
