@@ -1,6 +1,6 @@
 export default [
   {
-    setterName: 'TestSetter',
+    setterName: "TestSetter",
     props: {},
   },
 ];
