@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 import i18next from './i18next';
 
-import './view.pc.less';
+import styles from './view.pc.module.less';
 
 export default class TestField extends Component {
 
@@ -12,7 +12,7 @@ export default class TestField extends Component {
     // 定制渲染
     const store = this.props.store;
     return (
-      <div className="">
+      <div className={styles.wrap}>
         TestField
       </div>
     );
