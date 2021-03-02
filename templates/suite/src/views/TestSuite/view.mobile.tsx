@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from "react";
 
 import i18next from "./i18next";
 
-import "./view.mobile.less";
+import styles from "./view.mobile.module.less";
 
 export default class TestSuite extends Component {
   render() {
@@ -11,7 +11,7 @@ export default class TestSuite extends Component {
     // 定制渲染
     const store = this.props.store;
     return (
-      <div className="">
+      <div className={styles.wrap}>
         TestSuite
         {store.getChildren().map((field) => {
           return (
