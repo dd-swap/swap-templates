@@ -67,7 +67,7 @@
     "antd-mobile": ">=2.3.0"
   },
   "publishConfig": {
-    "registry": "https://registry.npm.alibaba-inc.com"
+    "registry": "https://registry.npmjs.org"
   },
   "license": "MIT"
 }
