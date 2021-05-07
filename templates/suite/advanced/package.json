@@ -1,5 +1,5 @@
 {
-  "name": "@ali/<%- name %>",
+  "name": "<%- name %>",
   "version": "<%- version %>",
   "description": "<%- description %>",
   "files": [
@@ -69,6 +69,5 @@
   "publishConfig": {
     "registry": "https://registry.npm.alibaba-inc.com"
   },
-  "license": "MIT",
-  "homepage": "https://unpkg.alibaba-inc.com/@ali/<%- name %>@1.0.0/build/index.html"
+  "license": "MIT"
 }
