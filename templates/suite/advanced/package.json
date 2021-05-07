@@ -1,0 +1,74 @@
+{
+  "name": "@ali/<%- name %>",
+  "version": "<%- version %>",
+  "description": "<%- description %>",
+  "files": [
+    "dist",
+    "lib",
+    "typings"
+  ],
+  "main": "lib/index.js",
+  "module": "typings/index.d.ts",
+  "scripts": {
+    "debug": "tnpm ii && swap debug",
+    "build": "gulp",
+    "prepublishOnly": "npm run build",
+    "i18n": "node ./updatei18n.js",
+    "lint": "eslint --cache --ext .js,.jsx ./",
+    "test": "dtest test -t h5 -c --coverage",
+    "test-report": "dtest unit-test -R -T h5",
+    "test-prepush": "npm run test && npm run test-report"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run test-prepush"
+    }
+  },
+  "keywords": [
+    "swap",
+    "react",
+    "suite"
+  ],
+  "tnpm": {
+    "mode": "yarn",
+    "lockfile": "enable"
+  },
+  "dependencies": {
+    "lodash": "4.17.20"
+  },
+  "devDependencies": {
+    "@ice/spec": "^1.0.0",
+    "@types/lodash": "^4.14.168",
+    "@types/react": "^16.9.13",
+    "@types/react-dom": "^16.9.4",
+    "axios": "^0.21.1",
+    "build-plugin-component": "^1.0.0",
+    "build-plugin-fusion": "^0.1.0",
+    "build-plugin-moment-locales": "^0.1.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "eslint": "^6.0.1",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-less": "^4.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "husky": "^4.2.5",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "create-react-class": "15.7.0",
+    "antd": ">=4.8.0",
+    "antd-mobile": ">=2.3.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0",
+    "antd": ">=4.8.0",
+    "antd-mobile": ">=2.3.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npm.alibaba-inc.com"
+  },
+  "license": "MIT",
+  "homepage": "https://unpkg.alibaba-inc.com/@ali/<%- name %>@1.0.0/build/index.html"
+}
