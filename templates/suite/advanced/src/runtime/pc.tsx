@@ -1,4 +1,3 @@
-import React from 'react';
 import find from 'lodash/find';
 import get from 'lodash/get';
 import './pc.less';
@@ -7,9 +6,15 @@ const SwapDemoSuite = {
   suiteDidMount() {
     const { form } = this.props;
     const hiddenReason = form.getSuiteProp('hiddenReason');
+    const leaveTypeExtendValue = form.getFieldExtendValue('leaveType');
+    const leaveReasonField = form.getFieldInstance('leaveReason');
 
     if (hiddenReason) {
-      form.getFieldInstance('leaveReason').hide();
+      leaveReasonField.hide();
+    }
+
+    if (leaveTypeExtendValue.key === 'option_1') {
+      leaveReasonField.hide();
     }
 
     this.formDataLinkagehandler();
