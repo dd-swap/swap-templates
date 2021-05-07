@@ -1,6 +1,6 @@
 import React from 'react';
 import SwapDemoSuite from '../../src/runtime/mobile';
-import FormField from './formField/mobile';
+import FormField from './FormField/mobile';
 import createReactClass from 'create-react-class';
 
 const Suite = createReactClass({

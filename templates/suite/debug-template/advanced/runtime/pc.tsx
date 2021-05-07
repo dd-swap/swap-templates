@@ -1,6 +1,6 @@
 import React from "react";
 import SwapDemoSuite from "../../src/runtime/pc";
-import FormField from "./formField/pc";
+import FormField from "./FormField/pc";
 import createReactClass from "create-react-class";
 
 const Suite = createReactClass({
