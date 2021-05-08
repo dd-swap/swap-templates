@@ -7,17 +7,13 @@
 ### 安装依赖
 
 ```
-tnpm install
+npm install
 ```
 
 ### 调试
 
 ```
 swap debug
-
-or
-
-yarn debug
 ```
 
 ### 发布

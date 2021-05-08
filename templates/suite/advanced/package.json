@@ -10,7 +10,7 @@
   "main": "lib/index.js",
   "module": "typings/index.d.ts",
   "scripts": {
-    "debug": "tnpm ii && swap debug",
+    "debug": "npm ii && swap debug",
     "build": "gulp",
     "prepublishOnly": "npm run build",
     "i18n": "node ./updatei18n.js",
@@ -29,10 +29,6 @@
     "react",
     "suite"
   ],
-  "tnpm": {
-    "mode": "yarn",
-    "lockfile": "enable"
-  },
   "dependencies": {
     "lodash": "4.17.20"
   },
