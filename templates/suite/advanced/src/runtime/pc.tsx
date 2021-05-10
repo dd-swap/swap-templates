@@ -13,7 +13,7 @@ const SwapDemoSuite = {
       leaveReasonField.hide();
     }
 
-    if (leaveTypeExtendValue.key === 'option_1') {
+    if (leaveTypeExtendValue?.key === 'option_1') {
       leaveReasonField.hide();
     }
 
