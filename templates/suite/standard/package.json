@@ -10,7 +10,6 @@
   "main": "lib/index.js",
   "module": "typings/index.d.ts",
   "scripts": {
-    "debug": "npm ii && swap debug",
     "build": "gulp",
     "prepublishOnly": "npm run build",
     "i18n": "node ./updatei18n.js",

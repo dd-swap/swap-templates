@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "tnpm": {
-    "mode": "yarn",
-    "lockfile": "enable"
-  },
   "devDependencies": {
     "antd": ">=4.8.0",
     "@ali/sw-utils": "^1.1.3"
