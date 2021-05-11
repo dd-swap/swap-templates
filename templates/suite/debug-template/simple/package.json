@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "antd": ">=4.8.0",
+    "antd": ">=4.8.0"
   },
   "peerDependencies": {
     "antd": ">=4.8.0"
