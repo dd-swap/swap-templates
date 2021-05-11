@@ -39,9 +39,6 @@ const SwapDemoSuite = {
   // 动态设置表单属性
   asyncSetFieldProps() {
     const { form, spi } = this.props;
-    const bizType = form.getSuiteProp('bizType');
-    const corpId = window.__corpid;
-    const userId = (window.__user__ || {}).workNo;
     const leaveReasonField = form.getFieldInstance('leaveReason');
     const leaveTypeField = form.getFieldInstance('leaveType');
     const value = leaveTypeField.getValue();
@@ -57,10 +54,8 @@ const SwapDemoSuite = {
     // 发请求
     spi
       .refreshData({
-        bizType,
-        corpId,
-        userId,
         bizAsyncData,
+        modifiedBizAlias: ['leaveHowLong'],
       })
       .then(res => {
         const leaveReasonData = find(
