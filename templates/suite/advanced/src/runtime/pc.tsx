@@ -36,11 +36,11 @@ const SwapDemoSuite = {
     });
   },
 
-  // 动态设置表单属性
+  // 动态获取业务数据
   asyncSetFieldProps() {
     const { form, spi } = this.props;
-    const leaveReasonField = form.getFieldInstance('leaveReason');
     const leaveTypeField = form.getFieldInstance('leaveType');
+    const leaveReasonField = form.getFieldInstance('leaveReason');
     const value = leaveTypeField.getValue();
     const extendValue = leaveTypeField.getExtendValue();
     const key = leaveTypeField.getProp('id');
@@ -53,15 +53,14 @@ const SwapDemoSuite = {
       },
     ];
 
-    // 发请求
     spi
       .refreshData({
+        modifiedBizAlias: ['leaveReason'], // spi接口要改动的是leaveReason的属性值
         bizAsyncData,
-        modifiedBizAlias: ['leaveReason'],
       })
       .then(res => {
         const leaveReasonData = find(
-          res.schemaList,
+          res.dataList,
           item => item.bizAlias === 'leaveReason',
         );
         const show = get(leaveReasonData, 'props.invisible');
