@@ -43,8 +43,10 @@ const SwapDemoSuite = {
     const leaveTypeField = form.getFieldInstance('leaveType');
     const value = leaveTypeField.getValue();
     const extendValue = leaveTypeField.getExtendValue();
+    const key = leaveTypeField.getProp('id');
     const bizAsyncData = [
       {
+        key,
         bizAlias: 'leaveType',
         extendValue,
         value,
@@ -55,14 +57,14 @@ const SwapDemoSuite = {
     spi
       .refreshData({
         bizAsyncData,
-        modifiedBizAlias: ['leaveHowLong'],
+        modifiedBizAlias: ['leaveReason'],
       })
       .then(res => {
         const leaveReasonData = find(
-          res.dataList,
+          res.schemaList,
           item => item.bizAlias === 'leaveReason',
         );
-        const show = get(leaveReasonData, 'props.show');
+        const show = get(leaveReasonData, 'props.invisible');
         if (show) {
           leaveReasonField.show();
         } else {
