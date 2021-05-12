@@ -35,7 +35,7 @@ const Setter = createReactClass({
     appHelper.emit("material.update", {
       swapKey: appHelper.activeKey,
       props: {
-        ...currentSchema,
+        ...currentSchema.props,
       },
     });
   },
@@ -50,7 +50,7 @@ const Setter = createReactClass({
       return item.props.bizAlias === bizAlias;
     });
 
-    return choosedChildren;
+    return choosedChildren?.props;
   },
 
   // 更新某一个childField的props
@@ -69,7 +69,6 @@ const Setter = createReactClass({
     appHelper.emit("material.update", {
       swapKey: appHelper.activeKey,
       props: {
-        ...currentSchema,
         children: childrenNew,
       },
     });
