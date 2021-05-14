@@ -25,7 +25,7 @@ interface IForm {
   // 设置对应字段的值
   setFieldValue: (bizAlias: string, value: any) => void;
   // 获取对应字段的扩展值
-  getFieldExtendValue: (bizAlias: string) => void;
+  getFieldExtendValue: (bizAlias: string) => any;
   // 设置对应字段的扩展值
   setFieldExtendValue: (bizAlias: string, extendValue: any) => void;
   // 监听对应字段的值变化

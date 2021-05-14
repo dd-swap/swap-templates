@@ -1,6 +1,7 @@
+import React from 'react';
 import { IValidationRule } from './Validator';
 
-interface IFieldData {
+export interface IFieldData {
   value?: any;
   extendValue?: any;
 }
@@ -24,7 +25,7 @@ interface IForm {
   // 设置对应字段的值
   setFieldValue: (bizAlias: string, value: any) => void;
   // 获取对应字段的扩展值
-  getFieldExtendValue: (bizAlias: string) => void;
+  getFieldExtendValue: (bizAlias: string) => any;
   // 设置对应字段的扩展值
   setFieldExtendValue: (bizAlias: string, extendValue: any) => void;
   // 监听对应字段的值变化
@@ -58,11 +59,14 @@ export interface IProps {
   // 表单实例
   form: IForm;
   // 套件开放的网关接口列表
-  spi: { [key: string]: () => void };
+  spi: { [key: string]: <T>(params: { [key: string]: any }) => Promise<T> };
 }
 
 export interface IFieldInstance {
   renderComponent: (opts?: { index?: number }) => any;
+  getValue: () => any;
+  getExtendValue: () => any;
+  setExtendValue: (extendValue: any) => void;
   setValue: (
     value: any,
     extra?: {
@@ -70,6 +74,7 @@ export interface IFieldInstance {
     },
   ) => void;
   setProp: (propName: string, propValue: any) => void;
+  getProp: (propName: string) => any;
   onExtendValueChange: (
     fn: (
       extendValue?: any,
@@ -99,4 +104,34 @@ export interface IContext {
   getFieldByBizAlias: (bizAlias: any) => IFieldInstance | undefined;
   getFieldById: (id: string) => IFieldInstance | undefined;
   getFieldsByComponentName: (componentName: string) => IFieldInstance[];
+}
+
+export interface ISuiteRuntime {
+  props?: IProps;
+  suiteWillMount?: () => void;
+  suiteDidMount?: () => void;
+  suiteDidUpdate?: () => void;
+  suiteRender?: () => React.ReactElement;
+}
+
+export interface IFormField {
+  props?: IProps;
+  fieldWillMount?: () => void;
+  fieldDidMount?: () => void;
+  fieldDidUpdate?: () => void;
+  fieldRender?: () => React.ReactElement;
+}
+
+export interface ISuiteDesignerSetter {
+  props?: IProps;
+  setterWillMount?: () => void;
+  setterDidMount?: () => void;
+  setterDidUpdate?: () => void;
+  setterRender?: () => React.ReactElement;
+  getSuiteProps?: () => any;
+  setSuiteProps?: (props: any) => any;
+  getFieldProps?: (bizAlias: string) => string;
+  setFieldProps?: (bizAlias: string, props: any) => void;
+  getAllFieldProps?: () => any;
+  setAllFieldProps?: (children: any) => any;
 }
