@@ -1,8 +1,14 @@
 import find from 'lodash/find';
 import get from 'lodash/get';
+import { ISuiteRuntime } from '../types';
 import './pc.less';
 
-const SwapDemoSuite = {
+interface ISwapDemoSuite extends ISuiteRuntime {
+  formDataLinkagehandler: () => void;
+  asyncSetFieldProps: () => void;
+}
+
+const SwapDemoSuite: ISwapDemoSuite = {
   suiteDidMount() {
     const { form } = this.props;
     const hiddenReason = form.getSuiteProp('hiddenReason');

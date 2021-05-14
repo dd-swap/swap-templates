@@ -1,13 +1,18 @@
 import React from 'react';
 import { Input } from 'antd';
+import { IFormField } from '../../types';
 
 import './pc.less';
+
+interface ISwapFormField extends IFormField {
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
 /**
  * 自定义控件运行态 PC 视图
  */
-const FormField = {
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+const FormField: ISwapFormField = {
+  handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { form } = this.props;
     form.setFieldValue('leaveHowLong', e.target.value);
   },
@@ -21,7 +26,7 @@ const FormField = {
     return (
       <div className="pc-custom-field-wrap">
         <div className="label">{label}</div>
-        {field?.props?.viewMode ? (
+        {field.getProp('viewMode') ? (
           field.getValue()
         ) : (
           <Input placeholder={placeholder} onChange={this.handleChange} />

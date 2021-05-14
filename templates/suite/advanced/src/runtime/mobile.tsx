@@ -1,7 +1,11 @@
-import React from 'react';
+import { ISuiteRuntime } from '../types';
 import './mobile.less';
 
-const SwapDemoSuite = {
+interface ISwapDemoSuite extends ISuiteRuntime {
+  formDataLinkagehandler: () => void;
+}
+
+const SwapDemoSuite: ISwapDemoSuite = {
   suiteDidMount() {
     const { form } = this.props;
     const hiddenReason = form.getSuiteProp('hiddenReason');
