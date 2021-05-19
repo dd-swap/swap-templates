@@ -1,4 +1,4 @@
-import SwapDemoSetter from "../../../../src/designer/setter/CustomSetter";
+import SwapDemoSetter from "@/src/designer/setter/CustomSetter";
 import createReactClass from "create-react-class";
 import assign from "lodash/assign";
 import map from "lodash/map";

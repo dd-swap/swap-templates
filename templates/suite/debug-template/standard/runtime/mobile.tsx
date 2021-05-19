@@ -1,5 +1,5 @@
 import React from "react";
-import SwapDemoSuite from "../../src/runtime/mobile";
+import SwapDemoSuite from "@/src/runtime/mobile";
 import createReactClass from "create-react-class";
 
 const Suite = createReactClass({
