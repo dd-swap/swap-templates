@@ -73,6 +73,15 @@
         "label": "请假时长/剩余时长"
       },
       "type": "custom"
+    },
+    {
+      "componentName": "LeaveDestinationField",
+      "bizAlias": "leaveDestination",
+      "props": {
+        "placeholder": "请输入",
+        "label": "请假目的地"
+      },
+      "type": "custom"
     }
   ]
 }
