@@ -13,15 +13,6 @@
         "label": "是否隐藏请假理由",
         "defaultChecked": false
       }
-    },
-    {
-      "propName": "hiddenReason",
-      "setterName": "CustomSetter",
-      "props": {
-        "label": "是否展示请假理由-自定义setter",
-        "defaultChecked": true
-      },
-      "type": "custom"
     }
   ],
   "children": [
@@ -36,6 +27,13 @@
           { "key": "option_1", "value": "病假" },
           { "key": "option_2", "value": "事假" }
         ]
+      }
+    },
+    {
+      "componentName": "TextNote",
+      "bizAlias": "leaveLeft",
+      "props": {
+        "notPrint": "1"
       }
     },
     {
@@ -58,6 +56,15 @@
         "required": true,
         "format": "yyyy-MM-dd",
         "unit": "天"
+      }
+    },
+    {
+      "componentName": "TextField",
+      "bizAlias": "leaveHowLong",
+      "props": {
+        "disabled": true,
+        "hidden": true,
+        "label": "请假时长"
       }
     },
     {
