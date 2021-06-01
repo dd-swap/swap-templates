@@ -11,7 +11,7 @@
       "setterName": "Switch",
       "props": {
         "label": "是否隐藏请假理由",
-        "defaultChecked": false
+        "defaultValue": false
       }
     }
   ],

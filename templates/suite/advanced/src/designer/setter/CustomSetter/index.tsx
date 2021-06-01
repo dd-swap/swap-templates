@@ -18,7 +18,10 @@ const SuiteSetterDemo: ISuiteSetterDemo = {
     return (
       <div>
         <div>{this.props.label}</div>
-        <Switch defaultChecked onChange={this.handleChange} />
+        <Switch
+          defaultChecked={this.props.defaultChecked}
+          onChange={this.handleChange}
+        />
       </div>
     );
   },

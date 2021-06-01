@@ -4,22 +4,14 @@
   "icon": "",
   "bizType": "com.example.leave",
   "templateType": "advanced",
-  "props": { "hiddenReason": false },
+  "props": {},
   "setters": [
-    {
-      "propName": "hiddenReason",
-      "setterName": "Switch",
-      "props": {
-        "label": "是否隐藏请假理由",
-        "defaultChecked": false
-      }
-    },
     {
       "propName": "hiddenReason",
       "setterName": "CustomSetter",
       "props": {
         "label": "是否展示请假理由-自定义setter",
-        "defaultChecked": true
+        "defaultChecked": false
       },
       "type": "custom"
     }
@@ -61,16 +53,12 @@
       }
     },
     {
-      "componentName": "TextareaField",
+      "componentName": "LeaveReasonField",
       "bizAlias": "leaveReason",
-      "props": { "placeholder": "请填写请假理由", "label": "请假理由" }
-    },
-    {
-      "componentName": "LeaveHowLongField",
-      "bizAlias": "leaveHowLong",
       "props": {
-        "placeholder": "请输入",
-        "label": "请假时长/剩余时长"
+        "placeholder": "请填写请假理由",
+        "label": "请假理由",
+        "showTextcount": true
       },
       "type": "custom"
     }

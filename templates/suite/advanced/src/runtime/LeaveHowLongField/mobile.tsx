@@ -1,17 +1,46 @@
 import React from 'react';
+import { Input } from 'antd';
 import { IFormField } from '../../types';
 
 import './mobile.less';
 
+const { TextArea } = Input;
+
+interface ISwapFormField extends IFormField {
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
 /**
- * 自定义控件运行态 Mobile 视图
+ * 自定义控件运行态 PC 视图
  */
-const FormField: IFormField = {
+const FormField: ISwapFormField = {
+  handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const { form } = this.props;
+    form.setFieldValue('leaveReason', e.target.value);
+  },
+
   fieldRender() {
-    // 如果不需要定制视图 这里直接return null即可 引擎会默认识别children进行渲染
-    // return null;
-    // 定制渲染
-    return <div className="mobile-wrap">CustomFormFieldMobileView</div>;
+    const { form } = this.props;
+    const field = form.getFieldInstance('leaveReason');
+    const label = form.getFieldProp('leaveReason', 'label');
+    const placeholder = form.getFieldProp('leaveReason', 'placeholder');
+    const showCount = form.getFieldProp('leaveReason', 'showTextcount');
+
+    return (
+      <div className="mobile-custom-field-wrap">
+        <div className="label">{label}</div>
+        {field.getProp('viewMode') ? (
+          field.getValue()
+        ) : (
+          <TextArea
+            showCount={showCount}
+            maxLength={100}
+            placeholder={placeholder}
+            onChange={this.handleChange}
+          />
+        )}
+      </div>
+    );
   },
 };
 
