@@ -11,7 +11,7 @@
       "setterName": "CustomSetter",
       "props": {
         "label": "是否展示请假理由-自定义setter",
-        "defaultChecked": false
+        "defaultChecked": true
       },
       "type": "custom"
     }
