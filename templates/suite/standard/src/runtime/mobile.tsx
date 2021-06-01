@@ -1,6 +1,11 @@
 import './mobile.less';
+import { ISuiteRuntime } from '../types';
 
-const SwapDemoSuite = {
+interface ISwapDemoSuite extends ISuiteRuntime {
+  formDataLinkagehandler: () => void;
+}
+
+const SwapDemoSuite: ISwapDemoSuite = {
   // 如需自定义state
   // getInitialState() {
   //   return {

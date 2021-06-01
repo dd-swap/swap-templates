@@ -1,8 +1,17 @@
 import find from 'lodash/find';
 import get from 'lodash/get';
+import { ISuiteRuntime } from '../types';
 import './pc.less';
 
-const SwapDemoSuite = {
+interface ISwapDemoSuite extends ISuiteRuntime {
+  handleLeaveHowLong: () => void;
+  handleLeaveLeft: () => void;
+  calculateLeaveHowLong: () => void;
+  formatHowLong: (deltaTime: number) => string;
+  refreshLeaveLeft: () => void;
+}
+
+const SwapDemoSuite: ISwapDemoSuite = {
   // 如需自定义state
   // getInitialState() {
   //   return {

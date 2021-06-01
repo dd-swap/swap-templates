@@ -1,6 +1,7 @@
 import './pc.less';
+import { ISuiteRuntime } from '../types';
 
-const SwapDemoSuite = {
+const SwapDemoSuite: ISuiteRuntime = {
   suiteDidMount() {},
 };
 
