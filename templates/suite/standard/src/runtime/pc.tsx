@@ -92,6 +92,7 @@ const SwapDemoSuite = {
   refreshLeaveLeft() {
     const { form, spi } = this.props;
     const leaveTypeField = form.getFieldInstance('leaveType');
+    const leaveLeftField = form.getFieldInstance('leaveLeft');
     const value = leaveTypeField.getValue();
     const extendValue = leaveTypeField.getExtendValue();
     const key = leaveTypeField.getProp('id');
@@ -104,11 +105,11 @@ const SwapDemoSuite = {
       },
     ];
     // 请假类型没有选择时，隐藏请假余额字段
-    if (!value) {
-      leaveTypeField.hide();
+    if (!extendValue) {
+      leaveLeftField.hide();
       return;
     }
-    leaveTypeField.show();
+    leaveLeftField.show();
     // 通过数据刷新spi接口，获取不同假期类型的假期余额
     spi
       .refreshData({
