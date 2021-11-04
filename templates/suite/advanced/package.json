@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "@ice/spec": "^1.0.0",
+    "@types/create-react-class": "^15.6.3",
     "@types/lodash": "^4.14.168",
     "@types/react": "^16.9.13",
     "@types/react-dom": "^16.9.4",
@@ -48,7 +49,8 @@
     "gulp-less": "^4.0.1",
     "gulp-plumber": "^1.2.1",
     "gulp-ts-alias": "^1.3.0",
-    "gulp-typescript": "^6.0.0-alpha.1"
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "map-stream": "^0.0.7"
   },
   "peerDependencies": {
     "react": ">=16.9.0",
